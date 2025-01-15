@@ -1,0 +1,71 @@
+import openai
+
+# Set your OpenAI API key
+openai.api_key = "your-api-key-here"
+
+# Function to generate lyrics
+def generate_lyrics(part_name, prompt):
+    response = openai.Completion.create(
+        model="gpt-4",  # Choose GPT-4 model
+        prompt=prompt,
+        max_tokens=150,  # Adjust based on the length of each part
+        temperature=0.7,  # Control creativity and randomness
+        n=1,
+        stop=["\n"],  # Stop generating after a new line
+    )
+    return response.choices[0].text.strip()
+
+# Define prompts for each section of the song
+intro_prompt = "Generate a soft, ambient intro with echoing pads and light piano. The lyrics should feel ethereal and distant, hinting at a story of longing and loss."
+
+verse1_prompt = """Generate a verse with light piano. The lyrics should describe the feeling of hearing someone's name in the breeze, a fleeting sound that can't be grasped. There's a sense of emptiness, and the wind carries the feeling of goodbye."""
+
+pre_chorus1_prompt = """Generate a pre-chorus where the strings rise. The lyrics should describe holding onto silent pain, feeling the strain during a bitter night. Even though the moments are fleeting, the narrator holds onto the spark of the lost connection."""
+
+chorus_prompt = """Generate a powerful chorus with soaring vocals. The lyrics should express a sense of waiting through the endless night, feeling the cold, and knowing that the other person’s dreams have turned to stone. The narrator vows to find them, even though hope feels thin."""
+
+verse2_prompt = """Generate a second verse with soft piano and light strings. The lyrics should describe a figure standing still, a child with eyes lowered, trying to reach for the lost person but only left with the fray of their absence."""
+
+pre_chorus2_prompt = """Generate a second pre-chorus with swelling strings. The lyrics should describe holding the flame of memory, despite the pain, and not forgetting the name of the lost one. The silence is louder, but the narrator remembers what they were waiting for."""
+
+bridge_prompt = """Generate a bridge with an orchestral build and echoing vocals. The lyrics should express the narrator’s resolve to remain, chasing the light through tears and endless rain. The narrator vows to find the lost person wherever they call from."""
+
+outro_prompt = """Generate a soft piano outro with an ambient fade. The lyrics should express calling out the name, but hearing only silence. The narrator waits in the cold, promising to find the lost person when the new day dawns."""
+
+# Generate each part of the song
+intro = generate_lyrics("Intro", intro_prompt)
+verse1 = generate_lyrics("Verse 1", verse1_prompt)
+pre_chorus1 = generate_lyrics("Pre-Chorus 1", pre_chorus1_prompt)
+chorus = generate_lyrics("Chorus", chorus_prompt)
+verse2 = generate_lyrics("Verse 2", verse2_prompt)
+pre_chorus2 = generate_lyrics("Pre-Chorus 2", pre_chorus2_prompt)
+bridge = generate_lyrics("Bridge", bridge_prompt)
+outro = generate_lyrics("Outro", outro_prompt)
+
+# Print the generated lyrics
+print("[Intro, Echoing pads, soft piano]")
+print(intro)
+print()
+print("[Verse 1, Light piano]")
+print(verse1)
+print()
+print("[Pre-Chorus 1, Strings rise]")
+print(pre_chorus1)
+print()
+print("[Chorus, Soaring vocals]")
+print(chorus)
+print()
+print("[Verse 2, Soft piano, light strings]")
+print(verse2)
+print()
+print("[Pre-Chorus 2, Strings swelling]")
+print(pre_chorus2)
+print()
+print("[Chorus, Powerful vocals]")
+print(chorus)
+print()
+print("[Bridge, Orchestral build, echoing vocals]")
+print(bridge)
+print()
+print("[Outro, Soft piano, ambient fade]")
+print(outro)
