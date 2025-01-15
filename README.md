@@ -1,4 +1,7 @@
 # LINA-AI
+- [Official Website](https://linaai.net/)
+- [X (formerly Twitter)](https://twitter.com/LINAAI_SOL)
+
 A repository for the LINA AI-driven idol project, combining music generation and blockchain technology
 
 Operating System: Ubuntu 20.04 LTS or higher, macOS 11 or higher, Windows 10 (with WSL recommended).
