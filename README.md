@@ -1,6 +1,5 @@
 # LINA-AI
 A repository for the LINA AI-driven idol project, combining music generation and blockchain technology
-1. System Requirements
 
 Operating System: Ubuntu 20.04 LTS or higher, macOS 11 or higher, Windows 10 (with WSL recommended).
 
