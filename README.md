@@ -1,7 +1,7 @@
 # The First AI-Driven Idol Singer
 LINA AI is an innovative project that combines music generation and blockchain technology to create the first AI-driven idol singer. Using ChatGPT for lyric generation and SUNO for music composition, LINA AI represents a groundbreaking shift in the music industry by merging Web2 and Web3 technology to bring AI-generated music to the masses.
 
-**Project Vision**
+# Project Vision
 LINA AI is designed to revolutionize the way we experience music. By harnessing the power of artificial intelligence for both lyric creation and music composition, LINA serves as a virtual idol, transcending traditional music production methods. The project integrates blockchain technology to ensure that the AI-generated content can be distributed and owned within both Web2 and Web3 platforms.
 
 __Key Features__
