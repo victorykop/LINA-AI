@@ -29,6 +29,10 @@ Once the music and lyrics are generated, they are uploaded to major music platfo
 
 Although the project is still in the early stages, we welcome collaboration and feedback from the community! If you’re interested in contributing or learning more about LINA AI, feel free to reach out through the following channels:
 
+## **Contact Us**
+- **Website**: [linaai.net](http://linaai.net)
+- **(X)**: [@LINAAI_SOL](https://twitter.com/LINAAI_SOL)
+  
 ## **Acknowledgements**
 - **ChatGPT**: For generating lyrics and creative content.
 - **SUNO AI**: For AI-based music composition.
@@ -67,9 +71,7 @@ python --version
 # or
 python3 --version
 
-## **Contact Us**
-- **Website**: [linaai.net](http://linaai.net)
-- **(X)**: [@LINAAI_SOL](https://twitter.com/LINAAI_SOL)
+
 
 ---
 
