@@ -10,23 +10,23 @@ AI-Powered Music: Music composed by SUNO, an AI music generation model capable o
 Web2 and Web3 Integration: LINA AI connects traditional music platforms (Web2) and decentralized platforms (Web3).
 Blockchain-Powered Ownership: AI-generated content tracked and distributed using blockchain for transparency and ownership.
 
-**How It Works**
+# How It Works
 LINA AI’s system is powered by two core AI technologies:
 ChatGPT: Generates lyrics based on user prompts or themes, providing unique and creative song lyrics.
 SUNO: Composes music, producing melodies and harmonies to match the generated lyrics.
 Once the music and lyrics are generated, they are uploaded to major music platforms through blockchain integration, making the content accessible to a global audience.
 
-**Code Demonstration**
+# Code Demonstration
 Here’s a basic demonstration of how the AI system can be used to generate lyrics and music. These are placeholder code snippets; you can replace them with your actual implementation once the AI models are integrated.
 
-__1. Generate Lyrics using ChatGPT__
+# 1. Generate Lyrics using ChatGPT 
 This code shows how you can prompt ChatGPT to generate lyrics based on a given theme (e.g., "Love and loss").
 import openai
 
-# Set up OpenAI API key
+    # Set up OpenAI API key
 openai.api_key = 'your_api_key_here'
 
-# Generate lyrics based on a prompt
+    # Generate lyrics based on a prompt
 def generate_lyrics(prompt):
     response = openai.Completion.create(
         engine="text-davinci-003",
@@ -35,25 +35,25 @@ def generate_lyrics(prompt):
     )
     return response.choices[0].text.strip()
 
-# Example usage
+    # Example usage
 lyrics = generate_lyrics("Love and loss")
 print("Generated Lyrics:\n", lyrics)
 
-__2. Generate Music using SUNO__
+# 2. Generate Music using SUNO
 After generating the lyrics, the next step is to use SUNO to create the music. Here’s a simplified mockup of how music generation might work.
 import suno  # Assuming suno is a module to generate music (placeholder)
 
-# Generate music based on lyrics
+    # Generate music based on lyrics
 def generate_music(lyrics):
     # Placeholder for music generation logic
     music = suno.generate_from_lyrics(lyrics)
     return music
 
-# Example usage
+    # Example usage
 music = generate_music(lyrics)
 print("Generated Music:", music)
 
-__3. Uploading Music to Music Platforms__
+# 3. Uploading Music to Music Platforms
 Once the music is generated, you can upload it to major platforms using blockchain integration (via DistroKid or a similar service). Here’s a placeholder for how that might be done:
 import distrokid  # Placeholder for DistroKid integration
 
@@ -62,10 +62,10 @@ def upload_to_platforms(music, title="LINA Song"):
     distrokid.upload(music, title=title)
     print(f"Successfully uploaded {title} to music platforms!")
 
-# Example usage
+    # Example usage
 upload_to_platforms(music)
 
-**Future Goals**
+# Future Goals
 Interactive Experiences: Develop interactive AI idol features to engage with fans via social media and digital platforms.
 Live Performances: Explore virtual performances using AI-generated music and visuals.
 Decentralized Music Economy: Enable fans to participate in the project by owning and sharing content.
@@ -73,10 +73,11 @@ Decentralized Music Economy: Enable fans to participate in the project by owning
 Getting Involved
 Although the project is still in the early stages, we welcome collaboration and feedback from the community! If you’re interested in contributing or learning more about LINA AI, feel free to reach out through the following channels:
 
-Website: linaai.net
-Twitter (X): @LINAAI_SOL
-
-**Acknowledgements**
+# Acknowledgements
 ChatGPT: For generating lyrics and creative content.
 SUNO AI: For AI-based music composition.
 DistroKid: For the distribution of LINA’s music across global platforms.
+
+# Contact Us
+Website: linaai.net
+Twitter (X): @LINAAI_SOL
