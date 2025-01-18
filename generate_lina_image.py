@@ -70,14 +70,13 @@ Environment Variable Setup:
 To securely manage your OpenAI API key, set it as an environment variable. In your terminal, execute the following command (replace <your_openai_api_key> with your actual API key):
 
 bash
-复制代码
 export OPENAI_API_KEY=<your_openai_api_key>  # For Windows: `set OPENAI_API_KEY=<your_openai_api_key>`
 Running the Code:
 
 In your terminal, navigate to the directory containing generate_lina_image.py and execute:
 
 bash
-复制代码
+
 python generate_lina_image.py
 This script will use DALL·E to generate an image based on the provided prompt and save it as lina_self_portrait.png.
 
