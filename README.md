@@ -71,51 +71,100 @@ python --version
 # or
 python3 --version
 
-
-
 ---
 
 ## **Code Demonstration**
 
-Here’s a basic demonstration of how the AI system can be used to generate lyrics, create music, and upload the content. These are placeholder code snippets; you can replace them with your actual implementation once the AI models are integrated.
-
-### **1. Generate Lyrics, Music, and Upload to Platforms**
-This code shows how you can prompt ChatGPT to generate lyrics, then use SUNO to generate the music, and finally upload the music to platforms using blockchain integration.
-
-```python
 import openai
-import suno  # Assuming suno is a module to generate music (placeholder)
-import distrokid  # Placeholder for DistroKid integration
+import logging
+import os
+from typing import Optional
 
-# Set up OpenAI API key
-openai.api_key = 'your_api_key_here'
+# Placeholder for suno module, assuming a valid music generation library
+import suno  # Import actual music generation library when available
+import distrokid  # Placeholder for actual DistroKid integration
 
-# Generate lyrics based on a prompt
-def generate_lyrics(prompt):
-    response = openai.Completion.create(
-        engine="text-davinci-003", 
-        prompt=prompt, 
-        max_tokens=200
-    )
-    return response.choices[0].text.strip()
+# Set up logging for better traceability and debugging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Generate music based on lyrics
-def generate_music(lyrics): 
-    # Placeholder for music generation logic
-    music = suno.generate_from_lyrics(lyrics)
-    return music
+# Configuration for the OpenAI API key (Use environment variables for secure API key management)
+openai_api_key = os.getenv("OPENAI_API_KEY", "your_api_key_here")  # Retrieve API key securely
 
-# Uploading music to platforms
-def upload_to_platforms(music, title="LINA Song"): 
-    # Placeholder for uploading music to platforms like Spotify, Apple Music, etc.
-    distrokid.upload(music, title=title)
-    print(f"Successfully uploaded {title} to music platforms!")
+if not openai_api_key:
+    logging.error("OpenAI API key is not set. Please set the API key in your environment variables.")
+    exit(1)
 
-# Example usage
-lyrics = generate_lyrics("Love and loss")
-print("Generated Lyrics:\n", lyrics)
+openai.api_key = openai_api_key
 
-music = generate_music(lyrics)
-print("Generated Music:", music)
+# Function to generate lyrics using OpenAI's GPT-3 model
+def generate_lyrics(prompt: str, max_tokens: int = 200) -> Optional[str]:
+    try:
+        response = openai.Completion.create(
+            engine="text-davinci-003",
+            prompt=prompt,
+            max_tokens=max_tokens,
+            temperature=0.7  # Adjust temperature for creativity
+        )
+        lyrics = response.choices[0].text.strip()
+        logging.info("Successfully generated lyrics.")
+        return lyrics
+    except Exception as e:
+        logging.error(f"Error generating lyrics: {e}")
+        return None
+
+# Function to generate music based on lyrics
+def generate_music(lyrics: str) -> Optional[str]:
+    try:
+        if not lyrics:
+            raise ValueError("Lyrics are required to generate music.")
+        
+        # Placeholder for music generation logic
+        music = suno.generate_from_lyrics(lyrics)  # Replace with real call to suno or actual music generation logic
+        logging.info("Successfully generated music based on lyrics.")
+        return music
+    except Exception as e:
+        logging.error(f"Error generating music: {e}")
+        return None
+
+# Function to upload music to a platform (e.g., Spotify, Apple Music)
+def upload_to_platforms(music: str, title: str = "LINA Song") -> bool:
+    try:
+        if not music:
+            raise ValueError("No music to upload.")
+        
+        # Placeholder for platform uploading logic using DistroKid or another service
+        distrokid.upload(music, title=title)  # Replace with actual upload functionality
+        logging.info(f"Successfully uploaded {title} to music platforms!")
+        return True
+    except Exception as e:
+        logging.error(f"Error uploading music to platforms: {e}")
+        return False
+
+# Main function to orchestrate the complete flow: generating lyrics, music, and uploading it
+def main():
+    try:
+        # Generate lyrics
+        lyrics = generate_lyrics("Love and loss")
+        if lyrics:
+            logging.info(f"Generated Lyrics: {lyrics}")
+        
+        # Generate music
+        music = generate_music(lyrics)
+        if music:
+            logging.info(f"Generated Music: {music}")
+        
+        # Upload music to platforms
+        if upload_to_platforms(music, "LINA Song"):
+            logging.info("Process completed successfully.")
+        else:
+            logging.error("Music upload failed.")
+    
+    except Exception as e:
+        logging.error(f"Error in the main process: {e}")
+
+# Run the main process
+if __name__ == "__main__":
+    main()
+
 
 upload_to_platforms(music)
