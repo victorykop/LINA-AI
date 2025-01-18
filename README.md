@@ -79,5 +79,5 @@ SUNO AI: For AI-based music composition.
 DistroKid: For the distribution of LINA’s music across global platforms.
 
 # Contact Us
-Website: linaai.net
-Twitter (X): @LINAAI_SOL
+__Website:__ linaai.net
+__(X):__  @LINAAI_SOL
